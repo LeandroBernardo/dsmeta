@@ -69,7 +69,7 @@ function SalesCard() {
                     <tbody>
                         {sales.map(sale => {
                             return (
-                                <tr>
+                                <tr key={sale.id}>
                                     <td className="show992">{sale.id}</td>
                                     <td className="show576">{sale.date}</td>
                                     <td>{sale.sellerName}</td>
@@ -78,7 +78,7 @@ function SalesCard() {
                                     <td>{`R$ ${sale.amount}`}</td>
                                     <td>
                                         <div className="dsmeta-red-btn-container">
-                                            <NotificationButton />
+                                            <NotificationButton saleId={sale.id} />
                                         </div>
                                     </td>
                                 </tr>
